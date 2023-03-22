@@ -1,15 +1,18 @@
 package org.prog.airport;
 
+import java.util.ArrayList;
+import java.util.List;
+
 public class Airport {
 
-    public Passenger[] passengers = new Passenger[10];
+    public List<Passenger> passengers = new ArrayList<>();
     //    public List<Passenger> passengers = new ArrayList<>();
     public Plane[] planes = new Plane[3];
 
     public void addPassenger(Passenger arrivingPassenger) {
-        for (int i = 0; i < passengers.length; i++) {
-            if (passengers[i] == null) {
-                passengers[i] = arrivingPassenger;
+        for (int i = 0; i < passengers.size(); i++) {
+            if (passengers.get(i) == null) {
+                passengers.add(i, arrivingPassenger);
                 break;
             }
         }
