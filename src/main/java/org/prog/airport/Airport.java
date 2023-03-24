@@ -7,7 +7,7 @@ public class Airport {
 
     public List<Passenger> passengers = new ArrayList<>();
     //    public List<Passenger> passengers = new ArrayList<>();
-    public Plane[] planes = new Plane[3];
+    public List<Plane> planes = new ArrayList<>();
 
     public void addPassenger(Passenger arrivingPassenger) {
         for (int i = 0; i < passengers.size(); i++) {
@@ -19,9 +19,9 @@ public class Airport {
     }
 
     public void addPlane(Plane arrivingPlane) {
-        for (int i = 0; i < planes.length; i++) {
-            if (planes[i] == null) {
-                planes[i] = arrivingPlane;
+        for (int i = 0; i < planes.size(); i++) {
+            if (planes.get(i) == null) {
+                planes.add(i, arrivingPlane);
                 return;
             }
         }
